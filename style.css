@@ -458,4 +458,18 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .writing-jump { flex-wrap:wrap; }
 .check-report>summary { padding-block:12px; }
 
+/* Contextual writing assistance stays out of the permanent toolbar. */
+.writing-editor { position: relative; min-width: 0; }
+.latex-completion { position: absolute; z-index: 25; width: min(320px, 100%); max-width: 100%; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); box-shadow: 0 8px 24px #0002; overflow: hidden; }
+.latex-candidates { max-height: 148px; overflow-y: auto; overscroll-behavior: contain; }
+.latex-candidates button { display: flex; gap: 8px; align-items: center; justify-content: space-between; width: 100%; min-height: 44px; border: 0; border-radius: 0; text-align: left; padding: 8px 10px; background: transparent; }
+.latex-candidates button[aria-selected="true"] { background: var(--surface-alt, #8882); outline: 1px solid var(--border); outline-offset: -1px; }
+.latex-candidates code { overflow-wrap: anywhere; font-size: .85em; }
+.latex-candidates span { font-size: .75rem; color: var(--muted); }
+.completion-footer, .snippet-navigation { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 5px 8px; }
+.completion-footer { border-top: 1px solid var(--border); justify-content: space-between; }
+.completion-footer button, .snippet-navigation button { min-height: 40px; padding: 4px 8px; font-size: .8rem; }
+.completion-footer small, .snippet-navigation small { color: var(--muted); font-size: .75rem; }
+.snippet-navigation { padding: 4px 0; }
+
 .scratch-memory{font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);padding:14px 0;margin:0}.scratch-footer{font-size:12px;color:var(--muted);padding:30px 0}.scratch-jump{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}.scratch-focus{position:fixed;inset:12px;z-index:30;overflow:auto;background:var(--surface)}.check-request{padding:18px 0;border-top:1px solid var(--border)}[hidden]{display:none!important}.answer-preview .math-copy{white-space:pre-wrap}#history .submission{scroll-margin-top:30px}.create-panel label{margin:14px 0}.create-panel .actions{margin:14px 0}.review-panel input[type=checkbox]{display:inline-block}.history-dialog{background:var(--surface);color:var(--text)}@media(max-width:600px){.scratch-memory{font-size:12px}.scratch-focus{inset:0}.scratch-jump{gap:10px;font-size:14px}}
