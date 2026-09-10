@@ -472,4 +472,64 @@ input[type="checkbox"] { accent-color: var(--accent); }
 .completion-footer small, .snippet-navigation small { color: var(--muted); font-size: .75rem; }
 .snippet-navigation { padding: 4px 0; }
 
+/* v0.6.1: shared writing workbench */
+.workbench-problem>summary { cursor:pointer; font-size:14px; color:var(--muted); }
+.workbench-problem>div { max-height:28dvh; overflow:auto; padding-top:12px; }
+.workbench { min-width:0; margin-block:12px 20px; }
+.workbench-tools { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.workbench-tools button,.drawer-heading button { min-height:40px; font-size:13px; padding:6px 12px; }
+.workbench-tabs { display:flex; gap:4px; margin-right:auto; }
+.workbench-tabs button[aria-pressed=true] { border-color:var(--muted); }
+.workbench-panes { display:grid; grid-template-columns:minmax(0,var(--writing-ratio)) 12px minmax(0,1fr); height:clamp(390px,65dvh,820px); position:relative; }
+.workbench-source,.workbench-preview,.workbench-checks { min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; }
+.workbench-source { padding-right:5px; }
+.workbench-source .writing-jump { display:none; }
+.workbench-source .writing-editor { min-width:0; }
+.workbench-source .answer { height:clamp(285px,48dvh,680px); min-height:220px; resize:vertical; }
+.workbench-preview .answer-preview { min-height:100%; padding:16px; }
+.workbench-separator { cursor:col-resize; touch-action:none; margin-inline:3px; border-radius:5px; background:var(--line); }
+.workbench-separator:hover,.workbench-separator:focus-visible { background:var(--muted); outline:2px solid var(--border-strong); }
+.workbench-checks { grid-column:3; grid-row:1; border:1px solid var(--line); border-radius:8px; }
+.workbench-checks[hidden] { display:none; }
+.workbench[data-checks=true] .workbench-preview { display:none; }
+.workbench-checks .check-panel { border:0; padding:16px; margin:0; }
+.drawer-heading { position:sticky; top:0; z-index:3; background:var(--surface); padding:10px; display:flex; align-items:center; justify-content:space-between; gap:6px; border-bottom:1px solid var(--line); font-size:13px; }
+.preview-locations { margin-top:18px; border-top:1px solid var(--line); padding-top:10px; }
+.preview-locations button { display:flex; gap:10px; width:100%; text-align:left; margin-top:6px; min-height:40px; }
+.preview-locations code { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.source-preview { font-size:18px; line-height:1.9; white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:850px) {
+ .workbench-panes { display:block; height:65dvh; min-height:320px; }
+ .workbench-source,.workbench-preview,.workbench-checks { height:100%; }
+ .workbench[data-tab=write] .workbench-preview,.workbench[data-tab=preview] .workbench-source,.workbench[data-checks=true] .workbench-source { display:none; }
+ .workbench[data-checks=true] .workbench-checks { display:block; }
+ .workbench-separator,.split-reset { display:none; }
+ .workbench-source .answer { height:45dvh; }
+}
+
+.writing-editor { position:relative; }
+.source-input,.source-code { font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace !important; font-size:15px !important; font-weight:400 !important; font-style:normal; line-height:26px !important; letter-spacing:0 !important; tab-size:4; white-space:pre-wrap; overflow-wrap:break-word; word-break:normal; text-align:left; padding:16px 16px 16px 48px !important; box-sizing:border-box; }
+textarea.source-input { position:relative; z-index:1; color:transparent; caret-color:var(--text); background:transparent; }
+textarea.source-native { color:var(--text); }
+.source-layer { position:absolute; left:1px; pointer-events:none; overflow:hidden; border-radius:8px; background:var(--surface-subtle); }
+.source-layer[hidden] { display:none; }
+.source-code { margin:0 !important; border:0 !important; width:100%; max-width:none; overflow:visible !important; color:var(--text); background:transparent !important; }
+.source-line { display:block; position:relative; min-height:26px; }
+.source-line:before { content:attr(data-line); position:absolute; right:calc(100% + 14px); color:var(--muted); font-size:11px; user-select:none; }
+.source-current { background:color-mix(in srgb,var(--muted) 9%,transparent); }
+.syntax-command,.syntax-environment { color:#647c9e; }
+.syntax-brace,.syntax-delimiter { color:#9a6754; }
+.syntax-comment,.syntax-code { color:var(--muted); }
+.syntax-pair { background:color-mix(in srgb,var(--muted) 23%,transparent); outline:1px solid var(--border-strong); border-radius:2px; }
+[data-theme=dark] .syntax-command,[data-theme=dark] .syntax-environment { color:#a0bbdb; }
+[data-theme=dark] .syntax-brace,[data-theme=dark] .syntax-delimiter { color:#d9ac90; }
+@media(forced-colors:active) { textarea.source-input { color:CanvasText; } .source-layer { display:none; } }
+
+.workbench-actions { display:flex; align-items:center; gap:8px; margin-left:auto; }
+.workbench-actions .actions { margin:0; padding:0; border:0; gap:6px; }
+.workbench-actions>details { position:relative; font-size:12px; }
+.workbench-actions>details[open] { position:absolute; right:0; top:45px; z-index:8; width:min(400px,100%); padding:16px; border:1px solid var(--line); border-radius:8px; background:var(--surface); box-shadow:0 8px 24px #0002; }
+.workbench-tools { position:relative; }
+@media(max-width:600px) { .workbench-actions { width:100%; justify-content:space-between; } .workbench-tools { gap:4px; } }
+
 .scratch-memory{font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);padding:14px 0;margin:0}.scratch-footer{font-size:12px;color:var(--muted);padding:30px 0}.scratch-jump{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}.scratch-focus{position:fixed;inset:12px;z-index:30;overflow:auto;background:var(--surface)}.check-request{padding:18px 0;border-top:1px solid var(--border)}[hidden]{display:none!important}.answer-preview .math-copy{white-space:pre-wrap}#history .submission{scroll-margin-top:30px}.create-panel label{margin:14px 0}.create-panel .actions{margin:14px 0}.review-panel input[type=checkbox]{display:inline-block}.history-dialog{background:var(--surface);color:var(--text)}@media(max-width:600px){.scratch-memory{font-size:12px}.scratch-focus{inset:0}.scratch-jump{gap:10px;font-size:14px}}
