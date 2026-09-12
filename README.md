@@ -1,4 +1,4 @@
-# MathForge Scratch v0.6.1
+# MathForge Scratch v0.7.0
 
 Browser-only math workspace. No server, no database, no uploaded learning data. Reload clears the session. KaTeX assets are local; license: KATEX-LICENSE.txt.
 

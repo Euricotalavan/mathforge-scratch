@@ -532,4 +532,9 @@ textarea.source-native { color:var(--text); }
 .workbench-tools { position:relative; }
 @media(max-width:600px) { .workbench-actions { width:100%; justify-content:space-between; } .workbench-tools { gap:4px; } }
 
+.level-allocation { min-width:0; border:0; padding:0; margin:0; }
+.level-allocation legend { font-size:14px; margin-bottom:8px; }
+.level-counts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.level-counts input { width:100%; min-width:0; }
+
 .scratch-memory{font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);padding:14px 0;margin:0}.scratch-footer{font-size:12px;color:var(--muted);padding:30px 0}.scratch-jump{display:flex;flex-wrap:wrap;gap:16px;margin:16px 0}.scratch-focus{position:fixed;inset:12px;z-index:30;overflow:auto;background:var(--surface)}.check-request{padding:18px 0;border-top:1px solid var(--border)}[hidden]{display:none!important}.answer-preview .math-copy{white-space:pre-wrap}#history .submission{scroll-margin-top:30px}.create-panel label{margin:14px 0}.create-panel .actions{margin:14px 0}.review-panel input[type=checkbox]{display:inline-block}.history-dialog{background:var(--surface);color:var(--text)}@media(max-width:600px){.scratch-memory{font-size:12px}.scratch-focus{inset:0}.scratch-jump{gap:10px;font-size:14px}}
