@@ -1,7 +1,7 @@
-# MathForge Scratch v0.7.0
+# MathForge Cloud Preview
 
-Browser-only math workspace. No server, no database, no uploaded learning data. Reload clears the session. KaTeX assets are local; license: KATEX-LICENSE.txt.
+MathForge v0.7.0 with invite-only Google login and Supabase workspace storage. Guest practice remains disposable; signed-in users can save drafts and submissions, resume across browsers, export JSON/LaTeX, and explicitly clean up backed-up data.
 
-Shared editor, rendering, revision inspector and style with MathForge. Supports problem packs, writing, progressive hints, review requests/report imports, per-finding reveal/hide, human review, in-page mistake review/search/retry, and TeX exports from the Arena.
+Cloud access is currently limited to the owner. No private SQLite data is included. The client contains only the Supabase publishable key; authorization and quotas are enforced by server-side RPC and RLS.
 
-Persistent collections, multi-device conflict handling, backup/restore and assistance-version workflows remain features of the private edition. This static edition has no permanent history. Source and version mapping are maintained with the main local MathForge project.
+KaTeX assets are local; see KATEX-LICENSE.txt. Offline reopening and automatic conflict merging are not supported.
