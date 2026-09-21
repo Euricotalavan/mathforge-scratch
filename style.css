@@ -544,6 +544,16 @@ textarea.source-native { color:var(--text); }
 @media(max-width:850px){.workbench[data-checks=true] .workbench-panes{height:auto;min-height:0}.workbench[data-checks=true] .workbench-checks{height:auto;overflow:visible;overscroll-behavior:auto}}
 
 
+/* Optional study closeout stays secondary to continuing practice. */
+.obsidian-picks{max-height:20rem;overflow:auto;margin:1rem 0;border-block:1px solid var(--line)}
+.obsidian-picks>label{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;margin:0;overflow-wrap:anywhere}
+.obsidian-picks input{width:auto;flex:0 0 auto;margin-top:.3rem}
+.obsidian-picks small{display:block;color:var(--muted);margin-top:.2rem}
+.obsidian-export{margin-top:1rem;min-width:0}.obsidian-export textarea{max-width:100%}
+.obsidian-ready{border-top:1px solid var(--line);margin-top:1rem;padding-top:.75rem}
+.reading-options label:has(input[type=checkbox]){display:flex;align-items:center;gap:.5rem}
+.reading-options input[type=checkbox]{width:auto}
+
 /* Paper and ink colors affect the display only; exported evidence stays white. */
 :root{--sheet:#fffefa;--sheet-ink:#25342f;--sheet-guide:#d4dcd5;--sheet-dot:#dce3dc;--ink-desk:#edf0ec;--sheet-shadow:0 2px 5px #24362908,0 14px 42px #2436290b;--sheet-highlight:#f5e9b5}
 :root[data-theme=eye-care]{--sheet:#f8f1df;--sheet-ink:#38382d;--sheet-guide:#d3cbb6;--sheet-dot:#ddd2b9;--ink-desk:#e5decc;--sheet-shadow:0 2px 5px #4a38250a,0 14px 42px #4a382514;--sheet-highlight:#e9d69a}
