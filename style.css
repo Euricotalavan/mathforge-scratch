@@ -562,6 +562,7 @@ textarea.source-native { color:var(--text); }
 .ink-viewport{width:100%;aspect-ratio:5/3;max-height:64dvh;min-height:240px;overflow:auto;overscroll-behavior:contain;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;background:var(--surface-subtle);border:1px solid #b9c2c8;border-radius:8px;position:relative;scroll-behavior:auto}
 .ink-canvas{position:relative;margin:0 auto;flex:none;background:#fff;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 .ink-canvas canvas{display:block;width:100%;height:100%;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:crosshair}
+.ink-canvas canvas.ink-live{position:absolute;inset:0;pointer-events:none}
 .ink-viewport[data-tool=pan],.ink-viewport[data-tool=pan] canvas{cursor:grab}
 .ink-stroking .ink-viewport[data-tool=pan],.ink-stroking .ink-viewport[data-tool=pan] canvas{cursor:grabbing}
 html.ink-stroking,html.ink-stroking *{user-select:none!important;-webkit-user-select:none!important;-webkit-touch-callout:none!important}
